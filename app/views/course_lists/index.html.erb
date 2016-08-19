@@ -1,0 +1,7 @@
+<h1>Course Lists</h1>
+
+<% @courses.each do |course| %>
+  <h2><%= course.course_title %>
+  <h3><%= course.teacher %>
+  <%= button_to "Select Course"%>
+<% end %>
