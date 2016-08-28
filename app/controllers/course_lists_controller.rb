@@ -1,5 +1,5 @@
 class CourseListsController < ApplicationController
   def index
-    @courses = Course.all
+    @courses = Course.paginate(page: params[:page], perpage: 5)
   end
 end

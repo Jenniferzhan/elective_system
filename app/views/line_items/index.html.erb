@@ -13,9 +13,10 @@
 
   <tbody>
     <% @line_items.each do |line_item| %>
+
       <tr>
-        <td><%= line_item.course %></td>
-        <td><%= line_item.student %></td>
+        <td><%= line_item.course.course_title%></td>
+        <td><%= line_item.student.name %></td>
         <td><%= link_to 'Show', line_item %></td>
         <td><%= link_to 'Edit', edit_line_item_path(line_item) %></td>
         <td><%= link_to 'Destroy', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>

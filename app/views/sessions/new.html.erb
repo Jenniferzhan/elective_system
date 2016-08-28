@@ -1,5 +1,4 @@
-<h1>登录</h1>
-<hr/>
+<h1>LogIn</h1>
 
 <% if flash[:login_error] %>
   <p><%= flash[:login_error] %></p>
@@ -17,7 +16,13 @@
 <%= f.password_field :password %>
 </p>
 
-<p><%= f.button "登陆" %></p>
-<h2>没有账号？</h2>
+<p>
+<%= f.file_field :picture %>
+</p>
+
+<%= link_to 'forget password', new_password_reset_path %>
+
+<p><%= f.button "register" %></p>
 <%= link_to "Sign up now!", signup_path =%>
 <% end %>
+

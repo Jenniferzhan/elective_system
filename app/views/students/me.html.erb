@@ -1,0 +1,15 @@
+<p>current student: <span style="color:orange;font-size:24px"><%= Student.find(session[:student_id]).name %></span></p>
+<p>
+<p id="notice"><%= notice %></p>
+<ul>
+  <%= image_tag @student.picture ,size: "200x190" %>  
+  <% @student.line_items.each do |item| %>
+    <li><%= item.course.course_title %></li>
+<% end %>
+</ul>
+
+<%= link_to 'continue to select course', course_lists_index_path %> 
+<%= link_to 'Back', students_path %>
+<p><%= link_to 'Logout', logout_path,  method: :delete %></p> 
+
+

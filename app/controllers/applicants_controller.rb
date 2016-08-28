@@ -5,4 +5,6 @@ class ApplicantsController < ApplicationController
     @teacher = Teacher.new
   end
 
+  
+
   end

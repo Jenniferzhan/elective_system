@@ -26,11 +26,23 @@ class LineItemsController < ApplicationController
   # POST /line_items.json
   def create
     @student = current_student
-course = Course.find(params[:course_id])
-@line_item = @student.line_item.build(:course => course)
+    line_item = LineItem.new(
+      course_id: params[:course_id],
+      student_id: session[:student_id]
+    )
+    @course = Course.find(params[:course_id])
+
+    unless @student.courses.include? @course
+      @line_item = @student.line_items << line_item
+    else
+      @line_item = LineItem.new
+    end
+
     respond_to do |format|
-      if @line_item.save
-        format.html { redirect_to @line_item.student, notice: 'Line item was successfully created.' }
+      if @line_item && @course.quantity <= Course::MAXIMUM
+        @course.quantity += 1
+        @course.save
+        format.html { redirect_to me_url, notice: 'Line item was successfully created.' }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
@@ -64,13 +76,13 @@ course = Course.find(params[:course_id])
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_line_item
-      @line_item = LineItem.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_line_item
+    @line_item = LineItem.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def line_item_params
-      params.require(:line_item).permit(:course_id, :student_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def line_item_params
+    params.require(:line_item).permit(:course_id, :student_id)
+  end
 end

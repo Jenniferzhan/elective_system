@@ -1,0 +1,7 @@
+<h1>Forgot password</h1>
+<%= form_for :password_set, url: :password_resets do |f| %>
+
+<%= f.label :email %>
+<%= f.text_field :email %>
+<%= f.submit "Submit" %>
+<% end %>

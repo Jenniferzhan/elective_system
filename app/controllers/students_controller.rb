@@ -1,5 +1,15 @@
 class StudentsController < ApplicationController
+  include CurrentStudent
+
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+
+
+  def me
+    @student = current_student
+    if session[:student_id].blank?
+      redirect_to sessions_create_path
+    end
+  end
 
   # GET /students
   # GET /students.json
@@ -21,21 +31,16 @@ class StudentsController < ApplicationController
   def edit
   end
 
-  # POST /students
-  # POST /students.json
   def create
-    @student = Student.new(student_params)
-
-    respond_to do |format|
-      if @student.save
-        format.html { redirect_to root_url }
-        format.json { render :show, status: :created, location: @student }
-      else
-        format.html { render :new }
-        format.json { render json: @student.errors, status: :unprocessable_entity }
-      end
+    @student = Student.create(student_params)
+    if @student.save
+      redirect_to :sessions_new
+    else
+      redirect_to :signup_url
     end
   end
+  # POST /students
+  # POST /students.json
 
   # PATCH/PUT /students/1
   # PATCH/PUT /students/1.json
@@ -62,13 +67,13 @@ class StudentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_student
-      @student = Student.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_student
+    @student = Student.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def student_params
-      params.require(:student).permit(:name, :password, :password_confirmation)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def student_params
+    params.require(:student).permit(:name, :password, :password_confirmation, :picture, :email)
+  end
 end

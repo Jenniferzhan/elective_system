@@ -1,4 +1,4 @@
-<h1>注册</h1>
+<h1>Signup</h1>
 
 <% if @student.errors.any? %>
   <ul>
@@ -16,6 +16,11 @@
 </p>
 
 <p>
+<%= f.label :email %>
+<%= f.text_field :email %>
+</p>
+
+<p>
 <%= f.label :password %>
 <%= f.password_field :password %>
 </p>
@@ -25,7 +30,7 @@
 <%= f.password_field :password_confirmation %>
 </p>
 
-<p><%= f.button "提交" %></p>
+<p><%= f.button "submit" %></p>
       <% end %>
 
 <% if @teacher.errors.any? %>
@@ -37,7 +42,7 @@
 <% end %>
 
 <h2> nice to meet you! <span style="color:red">Teacher Channel</span></h2>
-<%= form_for @teacher, url: :applicants_create do |f| %>
+<%= form_for @teacher, url: :teachers do |f| %>
   <p>
 <%= f.label :name %>
 <%= f.text_field :name %>
@@ -53,6 +58,6 @@
 <%= f.password_field :password_confirmation %>
 </p>
 
-<p><%= f.button "提交" %></p>
+<p><%= f.button "submit" %></p>
       <% end %>
 

@@ -1,0 +1,2 @@
+      invoke  active_record
+    conflict    db/migrate/20160823063526_create_teachers.rb
