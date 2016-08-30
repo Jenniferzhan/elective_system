@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
+<% form_tag courses_path, :method => 'get' do %>
+  <p>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
 
 <h1>Courses</h1>
 
@@ -10,7 +16,6 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @courses.each do |course| %>
       <tr>
@@ -21,9 +26,21 @@
         <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+
   </tbody>
 </table>
+<%= will_paginate @courses,:prev_label=> '上一页',:next_label=> '下一页' %>
+
 
 <br>
 
 <%= link_to 'New Course', new_course_path %>
+<p>
+Download:
+<%= link_to "CSV", courses_path(format: "csv") %> 
+</p>
+<h2>Import Course</h2>
+<%= form_tag import_courses_path, multipart: true do %>
+  <%= file_field_tag :file %> 
+  <%= submit_tag "Import" %>
+<% end %> 

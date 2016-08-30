@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160823064600) do
+ActiveRecord::Schema.define(version: 20160830063125) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -23,6 +24,8 @@ ActiveRecord::Schema.define(version: 20160823064600) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.integer  "quantity",     default: 1
+    t.integer  "teacher_id"
+    t.integer  "student_id"
   end
 
   create_table "line_items", force: :cascade do |t|
@@ -30,9 +33,10 @@ ActiveRecord::Schema.define(version: 20160823064600) do
     t.integer  "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["course_id"], name: "index_line_items_on_course_id"
-    t.index ["student_id"], name: "index_line_items_on_student_id"
   end
+
+  add_index "line_items", ["course_id"], name: "index_line_items_on_course_id"
+  add_index "line_items", ["student_id"], name: "index_line_items_on_student_id"
 
   create_table "students", force: :cascade do |t|
     t.string   "name"

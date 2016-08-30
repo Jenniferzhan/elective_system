@@ -1,8 +1,0 @@
-<p id="notice"><%= notice %></p>
-
-<% @student.line_items.each do |item| %>
-  <li><%= item.course.course_title %></li>
-<% end %>
-
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>

@@ -4,9 +4,21 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+    @courses = Course.paginate :page => params[:page],
+      :per_page => 5
+    respond_to do |format|
+      format.html  
+      format.csv { send_data @courses.to_csv }
+    end
   end
-
+def search
+    keyword = params["keyword"]
+        @courses = Course.where(["course_title like ? or teacher like ?" , "%#{keyword}%", "%#{keyword}%"])
+          end
+  def import 
+     Course.import(params[:file]) 
+     redirect_to courses_url, notice: "courses imported."
+  end
   # GET /courses/1
   # GET /courses/1.json
   def show

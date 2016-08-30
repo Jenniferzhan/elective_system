@@ -3,14 +3,15 @@ Rails.application.routes.draw do
 
   resources :line_items
 
-  resources :students
+  resources :students, only: [:new, :create, :index, :destroy, :me]
   get 'me' => "students#me"
 
   resources :teachers
+get 'mypage' => "teachers#mypage"
   get 'course_lists/index'
-
-  resources :courses
-
+  resources :courses do
+collection { post :import }
+  end
   post 'applicants/create'
 
   get 'signup' => 'applicants#new'

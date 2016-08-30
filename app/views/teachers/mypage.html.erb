@@ -1,0 +1,17 @@
+<p>current teacher: 
+<span style="color:orange;font-size:24px">
+  <%= Teacher.find(session[:teacher_id]).name %>
+</span>
+</p>
+<p id="notice"><%= notice %></p>
+<% @courses.each do |c| %>
+  <p>course id: <%= c.id %></p> 
+  <p>course title: <%= c.course_title %></p> 
+<ul>
+  <% c.students.each do |student| %>
+    <li>student id: <%= student.id %></li>
+    <li>student name: <%= student.name %></li>
+<% end %>
+</ul>
+<% end %>
+<p><%= link_to 'Logout', logout_path,  method: :delete %></p> 

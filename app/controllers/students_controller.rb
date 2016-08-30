@@ -19,8 +19,6 @@ class StudentsController < ApplicationController
 
   # GET /students/1
   # GET /students/1.json
-  def show
-  end
 
   # GET /students/new
   def new
@@ -28,15 +26,14 @@ class StudentsController < ApplicationController
   end
 
   # GET /students/1/edit
-  def edit
-  end
 
   def create
     @student = Student.create(student_params)
     if @student.save
+      puts "**************"      
       redirect_to :sessions_new
     else
-      redirect_to :signup_url
+      redirect_to :signup
     end
   end
   # POST /students
@@ -44,17 +41,6 @@ class StudentsController < ApplicationController
 
   # PATCH/PUT /students/1
   # PATCH/PUT /students/1.json
-  def update
-    respond_to do |format|
-      if @student.update(student_params)
-        format.html { redirect_to @student, notice: 'Student was successfully updated.' }
-        format.json { render :show, status: :ok, location: @student }
-      else
-        format.html { render :edit }
-        format.json { render json: @student.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
   # DELETE /students/1
   # DELETE /students/1.json
