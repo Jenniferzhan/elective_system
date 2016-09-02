@@ -4,7 +4,7 @@ class Student < ApplicationRecord
   validates :name, presence: true, uniqueness: true 
   mount_uploader :picture, PictureUploader
   has_secure_password
-  validates :password, length: { minimum: 6 }
+  #validates :password, length: { minimum: 6 }
   has_many :line_items
   has_many :courses, through: :line_items
 

@@ -5,6 +5,7 @@ class PasswordResetsController < ApplicationController
 
   def create
     @student = Student.find_by(email: params[:password_set][:email])
+    @teacher = Teacher.find_by(email: params[:password_set][:email])
     if @student
       @student.password = params[:password_set][:password]
       @student.save

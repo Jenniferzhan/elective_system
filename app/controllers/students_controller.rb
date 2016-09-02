@@ -33,7 +33,7 @@ class StudentsController < ApplicationController
       puts "**************"      
       redirect_to :sessions_new
     else
-      redirect_to :signup
+      redirect_to :signup 
     end
   end
   # POST /students

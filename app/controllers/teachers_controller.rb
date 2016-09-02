@@ -29,17 +29,17 @@ class TeachersController < ApplicationController
     if @teacher.save
       redirect_to :sessions_new
     else
-      render :signup
+      redirect_to :signup 
     end
   end
-
+private
 
   def set_teacher
-    @teacher = Student.find(params[:id])
+    @teacher = Teacher.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def teacher_params
-    params.require(:teacher).permit(:name, :password, :password_confirmation, :picture)
+    params.require(:teacher).permit(:name, :email, :password, :password_confirmation, :picture)
   end
 end

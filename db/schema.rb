@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160830063125) do
+ActiveRecord::Schema.define(version: 20160829123529) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20160830063125) do
     t.datetime "updated_at",               null: false
     t.integer  "quantity",     default: 1
     t.integer  "teacher_id"
-    t.integer  "student_id"
   end
 
   create_table "line_items", force: :cascade do |t|

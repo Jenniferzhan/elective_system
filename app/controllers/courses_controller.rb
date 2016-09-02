@@ -11,10 +11,7 @@ class CoursesController < ApplicationController
       format.csv { send_data @courses.to_csv }
     end
   end
-def search
-    keyword = params["keyword"]
-        @courses = Course.where(["course_title like ? or teacher like ?" , "%#{keyword}%", "%#{keyword}%"])
-          end
+
   def import 
      Course.import(params[:file]) 
      redirect_to courses_url, notice: "courses imported."

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :students, only: [:new, :create, :index, :destroy, :me]
   get 'me' => "students#me"
 
+  get "check_name/:name"=>"applicants#check_name"
+
   resources :teachers
 get 'mypage' => "teachers#mypage"
   get 'course_lists/index'

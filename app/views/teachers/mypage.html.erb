@@ -4,13 +4,15 @@
 </span>
 </p>
 <p id="notice"><%= notice %></p>
+
+<%= image_tag @teacher.picture ,size: "200x190" %>  
 <% @courses.each do |c| %>
   <p>course id: <%= c.id %></p> 
-  <p>course title: <%= c.course_title %></p> 
+<p>course title: <%= c.course_title %></p> 
 <ul>
   <% c.students.each do |student| %>
     <li>student id: <%= student.id %></li>
-    <li>student name: <%= student.name %></li>
+  <li>student name: <%= student.name %></li>
 <% end %>
 </ul>
 <% end %>
