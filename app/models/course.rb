@@ -4,7 +4,6 @@ class Course < ApplicationRecord
   has_many :students, through: :line_items
   MAXIMUM = 5
 
-<<<<<<< HEAD
   def self.to_csv
     CSV.generate do |csv|
       csv << column_names
@@ -18,6 +17,4 @@ class Course < ApplicationRecord
       Course.create! row.to_hash 
     end
   end
-=======
->>>>>>> dec7d54... The system has finished
 end

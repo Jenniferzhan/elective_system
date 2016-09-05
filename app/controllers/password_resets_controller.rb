@@ -5,28 +5,22 @@ class PasswordResetsController < ApplicationController
 
   def create
     @student = Student.find_by(email: params[:password_set][:email])
-<<<<<<< HEAD
     @teacher = Teacher.find_by(email: params[:password_set][:email])
     if @student
       @student.password = params[:password_set][:password]
       @student.save
       redirect_to "/"
-=======
     if @student
       @student.create_reset_digest
       redirect_to edit_password_reset_url(@student)
->>>>>>> dec7d54... The system has finished
     else
       render 'new'
     end
   end
 
   def edit
-<<<<<<< HEAD
     @student = Student.find_by(reset_digest: params[:id])
-=======
     @student = Student.find(params[:id])
->>>>>>> dec7d54... The system has finished
   end
 
   def update
