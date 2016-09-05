@@ -30,10 +30,16 @@ class StudentsController < ApplicationController
   def create
     @student = Student.create(student_params)
     if @student.save
+<<<<<<< HEAD
       puts "**************"      
       redirect_to :sessions_new
     else
       redirect_to :signup 
+=======
+      redirect_to :sessions_new
+    else
+      redirect_to :signup_url
+>>>>>>> dec7d54... The system has finished
     end
   end
   # POST /students
