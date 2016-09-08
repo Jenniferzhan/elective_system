@@ -34,6 +34,18 @@ class TeachersController < ApplicationController
   end
 private
 
+
+  def create
+    @teacher = Teacher.new(teacher_params)
+    @teacher = Teacher.create(teacher_params)
+    if @teacher.save
+      redirect_to :sessions_new
+    else
+      redirect_to :signup_path
+    end
+  end
+
+
   def set_teacher
     @teacher = Teacher.find(params[:id])
   end
@@ -41,5 +53,6 @@ private
   # Never trust parameters from the scary internet, only allow the white list through.
   def teacher_params
     params.require(:teacher).permit(:name, :email, :password, :password_confirmation, :picture)
+    params.require(:teacher).permit(:name, :password, :password_confirmation)
   end
 end

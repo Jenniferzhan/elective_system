@@ -10,6 +10,9 @@ class PasswordResetsController < ApplicationController
       @student.password = params[:password_set][:password]
       @student.save
       redirect_to "/"
+    if @student
+      @student.create_reset_digest
+      redirect_to edit_password_reset_url(@student)
     else
       render 'new'
     end
@@ -17,6 +20,7 @@ class PasswordResetsController < ApplicationController
 
   def edit
     @student = Student.find_by(reset_digest: params[:id])
+    @student = Student.find(params[:id])
   end
 
   def update

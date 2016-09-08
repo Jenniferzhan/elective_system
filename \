@@ -1,0 +1,18 @@
+<% if session[:student_id] %>
+  <p>welcome, <%= Student.find(session[:student_id]).name %>
+<% end %>
+<h1>Course Lists</h1>
+
+<% @courses.each do |course| %>
+  <h2><%= course.course_title %>
+<h3><%= course.teacher %>
+  <% if course.quantity <= Course::MAXIMUM%>
+
+      <%= button_to "Select Course", line_items_path(course_id: course) %>
+  <% else %>
+    <%= link_to 'full' %>
+    <% end %>
+  <% end %>
+    <br><br>
+    <%= link_to 'me', me_path %>
+    </br></br>

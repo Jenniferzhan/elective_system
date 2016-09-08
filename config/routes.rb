@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :line_items
 
+<<<<<<< HEAD
   resources :students, only: [:new, :create, :index, :destroy, :me]
   get 'me' => "students#me"
 
@@ -14,6 +15,22 @@ get 'mypage' => "teachers#mypage"
   resources :courses do
 collection { post :import }
   end
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
+  resources :students
+  get 'me' => "students#me"
+
+  resources :teachers
+  get 'course_lists/index'
+
+  resources :courses
+
+<<<<<<< HEAD
+=======
+>>>>>>> dec7d54... The system has finished
+>>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
   post 'applicants/create'
 
   get 'signup' => 'applicants#new'

@@ -5,6 +5,8 @@
   <p>welcome, <%= Student.find(session[:student_id]).name %>
 <% elsif session[:teacher_id] %>
   <p>welcome, <%= Teacher.find(session[:teacher_id]).name %>
+<% if session[:student_id] %>
+  <p>welcome, <%= Student.find(session[:student_id]).name %>
 <% end %>
 <br>
 <%= link_to 'me', me_path %>
@@ -23,4 +25,6 @@
     <%= will_paginate @courses,:prev_label=> '上一页',:next_label=> '下一页' %> 
     <br><br>
 
+    <br><br>
+    <%= link_to 'me', me_path %>
     </br></br>
