@@ -17,9 +17,13 @@ class TeachersController < ApplicationController
   def index
     @teacher = Teacher.all
   end
+<<<<<<< HEAD
   def new
     @teacher = Teacher.new
   end
+=======
+
+>>>>>>> dec7d54... The system has finished
 
 
 
@@ -29,11 +33,16 @@ class TeachersController < ApplicationController
     if @teacher.save
       redirect_to :sessions_new
     else
+<<<<<<< HEAD
       redirect_to :signup 
+=======
+      redirect_to :signup_path
+>>>>>>> dec7d54... The system has finished
     end
   end
 private
 
+<<<<<<< HEAD
 
   def create
     @teacher = Teacher.new(teacher_params)
@@ -46,13 +55,19 @@ private
   end
 
 
+=======
+
+>>>>>>> dec7d54... The system has finished
   def set_teacher
     @teacher = Teacher.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def teacher_params
+<<<<<<< HEAD
     params.require(:teacher).permit(:name, :email, :password, :password_confirmation, :picture)
+=======
+>>>>>>> dec7d54... The system has finished
     params.require(:teacher).permit(:name, :password, :password_confirmation)
   end
 end

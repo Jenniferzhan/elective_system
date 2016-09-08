@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+<<<<<<< HEAD
     student = Student.find_by(name: student_params[:name]).try(:authenticate, student_params[:password])
     teacher = Teacher.find_by(name: teacher_params[:name]).try(:authenticate, teacher_params[:password]) 
     if  student.present? 
@@ -25,6 +26,8 @@ class SessionsController < ApplicationController
       teacher.save
       redirect_to mypage_path
     elsif
+=======
+>>>>>>> dec7d54... The system has finished
     student = Student.find_by(name: student_params[:name])
     if student 
       session[:student_id] = student.id
@@ -42,6 +45,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:student_id] = nil
     redirect_to root_url, notice:"logged out"
+<<<<<<< HEAD
   end
 
 
@@ -49,17 +53,25 @@ class SessionsController < ApplicationController
     session[:student_id] = nil
     session[:teacher_id] = nil
     redirect_to root_url, notice:"logged out"
+=======
+>>>>>>> dec7d54... The system has finished
   end
 
   private
   def student_params
     params.require(:session).permit(:name, :password, :picture)
+<<<<<<< HEAD
   end
   def teacher_params
     params.require(:session).permit(:name, :password, :picture)
+=======
+>>>>>>> dec7d54... The system has finished
   end
 
   end
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> dec7d54... The system has finished
 end

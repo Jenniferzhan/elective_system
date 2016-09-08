@@ -12,7 +12,11 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160829123529) do
+=======
+ActiveRecord::Schema.define(version: 20160823064600) do
+>>>>>>> dec7d54... The system has finished
 =======
 ActiveRecord::Schema.define(version: 20160823064600) do
 >>>>>>> dec7d54... The system has finished
@@ -29,7 +33,10 @@ ActiveRecord::Schema.define(version: 20160823064600) do
     t.datetime "updated_at",               null: false
     t.integer  "quantity",     default: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
     t.integer  "teacher_id"
+=======
+>>>>>>> dec7d54... The system has finished
 =======
 >>>>>>> dec7d54... The system has finished
   end

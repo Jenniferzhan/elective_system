@@ -28,9 +28,12 @@ collection { post :import }
   resources :courses
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> dec7d54... The system has finished
 >>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
+=======
+>>>>>>> dec7d54... The system has finished
   post 'applicants/create'
 
   get 'signup' => 'applicants#new'

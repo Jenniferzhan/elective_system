@@ -5,6 +5,7 @@ class ApplicantsController < ApplicationController
     @teacher = Teacher.new
   end
 
+<<<<<<< HEAD
   def check_name
     user = Student.find_by_name(params[:name])
     if user.nil?
@@ -19,6 +20,8 @@ class ApplicantsController < ApplicationController
   end 
 
 
+=======
+>>>>>>> dec7d54... The system has finished
   
 
   end

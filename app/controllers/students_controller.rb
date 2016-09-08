@@ -31,6 +31,7 @@ class StudentsController < ApplicationController
     @student = Student.create(student_params)
     if @student.save
 <<<<<<< HEAD
+<<<<<<< HEAD
       puts "**************"      
       redirect_to :sessions_new
     else
@@ -46,6 +47,11 @@ class StudentsController < ApplicationController
       redirect_to :signup_url
 >>>>>>> dec7d54... The system has finished
 >>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
+=======
+      redirect_to :sessions_new
+    else
+      redirect_to :signup_url
+>>>>>>> dec7d54... The system has finished
     end
   end
   # POST /students
