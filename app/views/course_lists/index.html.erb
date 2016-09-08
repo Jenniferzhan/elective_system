@@ -6,8 +6,11 @@
   <p>welcome, <%= Student.find(session[:student_id]).name %>
 <% elsif session[:teacher_id] %>
   <p>welcome, <%= Teacher.find(session[:teacher_id]).name %>
+<<<<<<< HEAD
 =======
 >>>>>>> dec7d54... The system has finished
+=======
+>>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
 <% if session[:student_id] %>
   <p>welcome, <%= Student.find(session[:student_id]).name %>
 <% end %>
@@ -33,8 +36,11 @@
     <%= will_paginate @courses,:prev_label=> '上一页',:next_label=> '下一页' %> 
     <br><br>
 
+<<<<<<< HEAD
 =======
 >>>>>>> dec7d54... The system has finished
+=======
+>>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
     <br><br>
     <%= link_to 'me', me_path %>
     </br></br>

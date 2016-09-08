@@ -26,8 +26,11 @@ class SessionsController < ApplicationController
       teacher.save
       redirect_to mypage_path
     elsif
+<<<<<<< HEAD
 =======
 >>>>>>> dec7d54... The system has finished
+=======
+>>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
     student = Student.find_by(name: student_params[:name])
     if student 
       session[:student_id] = student.id
@@ -46,6 +49,9 @@ class SessionsController < ApplicationController
     session[:student_id] = nil
     redirect_to root_url, notice:"logged out"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
   end
 
 
@@ -71,7 +77,11 @@ class SessionsController < ApplicationController
   end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> dec7d54... The system has finished
+=======
+
+>>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
 end

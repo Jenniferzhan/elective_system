@@ -43,6 +43,9 @@ class TeachersController < ApplicationController
 private
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
 
   def create
     @teacher = Teacher.new(teacher_params)
@@ -55,9 +58,12 @@ private
   end
 
 
+<<<<<<< HEAD
 =======
 
 >>>>>>> dec7d54... The system has finished
+=======
+>>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
   def set_teacher
     @teacher = Teacher.find(params[:id])
   end
@@ -66,8 +72,11 @@ private
   def teacher_params
 <<<<<<< HEAD
     params.require(:teacher).permit(:name, :email, :password, :password_confirmation, :picture)
+<<<<<<< HEAD
 =======
 >>>>>>> dec7d54... The system has finished
+=======
+>>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
     params.require(:teacher).permit(:name, :password, :password_confirmation)
   end
 end

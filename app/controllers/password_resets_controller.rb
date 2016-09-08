@@ -11,8 +11,11 @@ class PasswordResetsController < ApplicationController
       @student.password = params[:password_set][:password]
       @student.save
       redirect_to "/"
+<<<<<<< HEAD
 =======
 >>>>>>> dec7d54... The system has finished
+=======
+>>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
     if @student
       @student.create_reset_digest
       redirect_to edit_password_reset_url(@student)
@@ -24,8 +27,11 @@ class PasswordResetsController < ApplicationController
   def edit
 <<<<<<< HEAD
     @student = Student.find_by(reset_digest: params[:id])
+<<<<<<< HEAD
 =======
 >>>>>>> dec7d54... The system has finished
+=======
+>>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
     @student = Student.find(params[:id])
   end
 

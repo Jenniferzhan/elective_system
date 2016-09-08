@@ -71,13 +71,19 @@ GEM
       thor (>= 0.14, < 2.0)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
     json (2.0.2)
 =======
     json (1.8.3)
 >>>>>>> dec7d54... The system has finished
+<<<<<<< HEAD
 =======
     json (1.8.3)
 >>>>>>> dec7d54... The system has finished
+=======
+>>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -172,13 +178,19 @@ GEM
     websocket-extensions (0.1.2)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
     will_paginate (3.1.0)
 =======
     will_paginate (3.0.7)
 >>>>>>> dec7d54... The system has finished
+<<<<<<< HEAD
 =======
     will_paginate (3.0.7)
 >>>>>>> dec7d54... The system has finished
+=======
+>>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
 
 PLATFORMS
   ruby

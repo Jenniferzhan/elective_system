@@ -32,10 +32,14 @@ class StudentsController < ApplicationController
     if @student.save
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
       puts "**************"      
       redirect_to :sessions_new
     else
       redirect_to :signup 
+<<<<<<< HEAD
 <<<<<<< HEAD
       redirect_to :sessions_new
     else
@@ -46,6 +50,8 @@ class StudentsController < ApplicationController
     else
       redirect_to :signup_url
 >>>>>>> dec7d54... The system has finished
+>>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
+=======
 >>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
 =======
       redirect_to :sessions_new

@@ -13,13 +13,19 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
 ActiveRecord::Schema.define(version: 20160829123529) do
 =======
 ActiveRecord::Schema.define(version: 20160823064600) do
 >>>>>>> dec7d54... The system has finished
+<<<<<<< HEAD
 =======
 ActiveRecord::Schema.define(version: 20160823064600) do
 >>>>>>> dec7d54... The system has finished
+=======
+>>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -34,11 +40,17 @@ ActiveRecord::Schema.define(version: 20160823064600) do
     t.integer  "quantity",     default: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     t.integer  "teacher_id"
 =======
 >>>>>>> dec7d54... The system has finished
 =======
 >>>>>>> dec7d54... The system has finished
+=======
+    t.integer  "teacher_id"
+=======
+>>>>>>> dec7d54... The system has finished
+>>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
   end
 
   create_table "line_items", force: :cascade do |t|
