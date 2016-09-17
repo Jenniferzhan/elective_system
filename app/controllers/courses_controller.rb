@@ -4,6 +4,7 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
+
     @courses = Course.paginate :page => params[:page],
       :per_page => 5
     respond_to do |format|
@@ -13,8 +14,9 @@ class CoursesController < ApplicationController
   end
 
   def import 
-     Course.import(params[:file]) 
+     if Course.import(params[:course][:file]) 
      redirect_to courses_url, notice: "courses imported."
+     end
   end
   # GET /courses/1
   # GET /courses/1.json

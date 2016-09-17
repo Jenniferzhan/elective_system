@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'simple_captcha2', require: 'simple_captcha'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.0.beta3'
@@ -27,14 +27,11 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-<<<<<<< HEAD
-
-=======
->>>>>>> dec7d54... The system has finished
- gem 'bcrypt', '~> 3.1.7'
- gem 'mini_magick', '3.8.0'
- gem 'carrierwave', '0.10.0'
- gem 'will_paginate'
+gem 'roo', '~> 2.5'
+gem 'bcrypt', '~> 3.1.7'
+gem 'mini_magick', '3.8.0'
+gem 'carrierwave', '0.10.0'
+gem 'will_paginate'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

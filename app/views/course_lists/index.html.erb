@@ -1,46 +1,23 @@
-<<<<<<< HEAD
-<%= session[:student_id] %>
 <span>___________________-</span>
 <%= session[:teacher_id]%>
 <% if session[:student_id] %>
   <p>welcome, <%= Student.find(session[:student_id]).name %>
 <% elsif session[:teacher_id] %>
   <p>welcome, <%= Teacher.find(session[:teacher_id]).name %>
-<<<<<<< HEAD
-=======
->>>>>>> dec7d54... The system has finished
-=======
->>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
-<% if session[:student_id] %>
-  <p>welcome, <%= Student.find(session[:student_id]).name %>
 <% end %>
 <br>
 <%= link_to 'me', me_path %>
 </br>
+
+<%= render "search_form" %>
 <h1>Course Lists</h1>
+<div id="course_list">
+  <%= render "course" %>
+</div>
+<%= will_paginate @courses,:prev_label=> '上一页',:next_label=> '下一页' %>
 
-<% @courses.each do |course| %>
-  <h2><%= course.course_title %>
-<h3><%= course.teacher %>
-  <% if course.quantity <= Course::MAXIMUM%>
-<<<<<<< HEAD
-=======
+<%= form_for @course, url: import_courses_path do |f| %>
+  <%= f.file_field :file, id: "id-input-file-3" %>
+<%= submit_tag "上传EXCEL文件", id: "import-upload", class: "btn btn-warning" %>
+      <% end %>
 
->>>>>>> dec7d54... The system has finished
-      <%= button_to "Select Course", line_items_path(course_id: course) %>
-  <% else %>
-      <%= link_to 'full' %>
-  <% end %>
-  <% end %>
-<<<<<<< HEAD
-    <%= will_paginate @courses,:prev_label=> '上一页',:next_label=> '下一页' %> 
-    <br><br>
-
-<<<<<<< HEAD
-=======
->>>>>>> dec7d54... The system has finished
-=======
->>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
-    <br><br>
-    <%= link_to 'me', me_path %>
-    </br></br>

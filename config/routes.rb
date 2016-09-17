@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   resources :line_items
 
-<<<<<<< HEAD
   resources :students, only: [:new, :create, :index, :destroy, :me]
   get 'me' => "students#me"
 
@@ -11,18 +10,9 @@ Rails.application.routes.draw do
 
   resources :teachers
 get 'mypage' => "teachers#mypage"
-  get 'course_lists/index'
   resources :courses do
 collection { post :import }
   end
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
-=======
-=======
->>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
   resources :students
   get 'me' => "students#me"
 
@@ -31,16 +21,6 @@ collection { post :import }
 
   resources :courses
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> dec7d54... The system has finished
->>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
-=======
-=======
->>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
->>>>>>> dec7d54... The system has finished
   post 'applicants/create'
 
   get 'signup' => 'applicants#new'

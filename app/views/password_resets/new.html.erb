@@ -1,14 +1,19 @@
 <h1>Forgot password</h1>
 <%= form_for :password_set, url: :password_resets do |f| %>
-
+<p>
 <%= f.label :email %>
 <%= f.text_field :email %>
-<<<<<<< HEAD
+</p>
+
+<p>
 <%= f.label :password %>
 <%= f.password_field :password %>
+</p>
+
+<p>
 <%= f.label :password_confirmation, "Confirmation" %>
 <%= f.password_field :password_confirmation %>
-=======
->>>>>>> dec7d54... The system has finished
-<%= f.submit "Submit" %>
+</p>
+
+<br><%= f.submit "Submit" %></br>
 <% end %>

@@ -11,21 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
-ActiveRecord::Schema.define(version: 20160829123529) do
-=======
-ActiveRecord::Schema.define(version: 20160823064600) do
->>>>>>> dec7d54... The system has finished
-<<<<<<< HEAD
-=======
-ActiveRecord::Schema.define(version: 20160823064600) do
->>>>>>> dec7d54... The system has finished
-=======
->>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
+ActiveRecord::Schema.define(version: 20160909100423) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -38,19 +24,8 @@ ActiveRecord::Schema.define(version: 20160823064600) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.integer  "quantity",     default: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     t.integer  "teacher_id"
-=======
->>>>>>> dec7d54... The system has finished
-=======
->>>>>>> dec7d54... The system has finished
-=======
-    t.integer  "teacher_id"
-=======
->>>>>>> dec7d54... The system has finished
->>>>>>> cddd5d8d8b71a86d48195d53a4155a0e8a604eb8
+    t.integer  "student_id"
   end
 
   create_table "line_items", force: :cascade do |t|
@@ -62,6 +37,15 @@ ActiveRecord::Schema.define(version: 20160823064600) do
 
   add_index "line_items", ["course_id"], name: "index_line_items_on_course_id"
   add_index "line_items", ["student_id"], name: "index_line_items_on_student_id"
+
+  create_table "simple_captcha_data", force: :cascade do |t|
+    t.string   "key",        limit: 40
+    t.string   "value",      limit: 6
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "simple_captcha_data", ["key"], name: "idx_key"
 
   create_table "students", force: :cascade do |t|
     t.string   "name"

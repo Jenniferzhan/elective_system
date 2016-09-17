@@ -1,0 +1,13 @@
+<form action="/course_lists/index" id="courses_search">
+  <input type="text" name="search" value="<%= params[:search] %>" id="exampleInputAmount" placeholder="course_title">
+  <button type="submit">Search</button>    
+</form>
+
+<script>
+$("#courses_search input").keyup(function() {
+    $.get($("#courses_search").attr("action"), $("#courses_search").serialize(), null, "script");
+    return false;                  
+    }); 
+</script>
+  
+
