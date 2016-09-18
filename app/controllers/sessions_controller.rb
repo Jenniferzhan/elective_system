@@ -19,14 +19,12 @@ class SessionsController < ApplicationController
       if params[:session][:picture].present?
         teacher.picture = params[:session][:picture]
       end
-      teacher.save
+      teacher.save!
       redirect_to mypage_path
     elsif
         flash.now[:login_error] = "invalid username or password or sample_captcha"
         render "new"
       end
-
-
     end
 
     def destroy

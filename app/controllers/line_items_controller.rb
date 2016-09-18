@@ -43,8 +43,6 @@ class LineItemsController < ApplicationController
         @course.quantity += 1
         @course.student_id = session[:student_id]
         @course.save
-        format.html { redirect_to me_url }
-        @course.save
         format.html { redirect_to me_url, notice: 'Line item was successfully created.' }
         format.json { render :show, status: :created, location: @line_item }
       else

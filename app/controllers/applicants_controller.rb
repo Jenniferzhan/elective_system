@@ -11,14 +11,10 @@ class ApplicantsController < ApplicationController
       render :json =>{msg: '', success: 'OK'}
       return
     end 
-
     if user.present? 
       render :json =>{msg: 'already registered', success: 'NG'}
       return
     end 
   end 
 
-
-  
-
-  end
+end

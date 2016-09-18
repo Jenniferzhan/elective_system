@@ -1,8 +1,6 @@
 class StudentsController < ApplicationController
   include CurrentStudent
-
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-
 
   def me
     @student = current_student

@@ -21,7 +21,6 @@ class TeachersController < ApplicationController
     @teacher = Teacher.new
   end
 
-
   def create
     @teacher = Teacher.new(teacher_params)
     @teacher = Teacher.create(teacher_params)
