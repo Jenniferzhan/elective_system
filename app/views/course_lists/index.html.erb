@@ -4,10 +4,8 @@
   <p>welcome, <%= Student.find(session[:student_id]).name %>
 <% elsif session[:teacher_id] %>
   <p>welcome, <%= Teacher.find(session[:teacher_id]).name %>
-<% end %>
-<br>
+<% end %><br>
 <%= link_to 'me', me_path %>
-</br>
 
 <%= render "search_form" %>
 <h1>Course Lists</h1>

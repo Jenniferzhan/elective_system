@@ -29,7 +29,6 @@ class SessionsController < ApplicationController
 
     end
 
-
     def destroy
       session[:student_id] = nil
       session[:teacher_id] = nil

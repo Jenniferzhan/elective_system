@@ -41,14 +41,11 @@ class LineItemsController < ApplicationController
     respond_to do |format|
       if @line_item && @course.quantity <= Course::MAXIMUM
         @course.quantity += 1
-<<<<<<< HEAD
         @course.student_id = session[:student_id]
         @course.save
         format.html { redirect_to me_url }
-=======
         @course.save
         format.html { redirect_to me_url, notice: 'Line item was successfully created.' }
->>>>>>> dec7d54... The system has finished
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
